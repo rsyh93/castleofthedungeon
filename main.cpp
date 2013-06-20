@@ -1,5 +1,5 @@
 #ifdef __APPLE__
-// for macs... ?
+// something else
 #else
 #include <SDL/SDL.h>
 #include <GL/glew.h>
