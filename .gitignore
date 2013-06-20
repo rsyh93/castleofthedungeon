@@ -1,0 +1,8 @@
+# Make git ignore compiled binaries
+castleinthedungeon
+*.o
+
+# Make git ignore backup files
+*~
+*.swp
+*.swo
