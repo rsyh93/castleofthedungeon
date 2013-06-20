@@ -1,0 +1,15 @@
+CC=g++
+CFLAGS=-Wall
+LIBS=-lGL -lGLEW `sdl-config --libs`
+OBJS=engine.o actor.o player.o
+
+all: castleinthedungeon
+	
+castleinthedungeon: main.cpp $(OBJS)
+	$(CC) $(CFLAGS) -o castleinthedungeon main.cpp $(OBJS) $(LIBS)
+
+.c.o: 
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -f castleinthedungeon $(OBJS)
