@@ -1,3 +1,4 @@
 migrate to CMake
 EVERYTHING
 separate into folders
+NAMESPACES!!! later...
