@@ -5,39 +5,64 @@
 #include <GL/glew.h>
 #endif
 
+#include "gamestate.hpp"
+#include "gamestate_game.hpp"
 #include "globals.hpp"
 #include <stdio.h>
+#include <stdlib.h>
 
-void error(char* const error_msg)
+bool change_state;
+Statename new_state;
+Gamestate *gamestate;
+
+SDL_Surface *Surf_Display;
+
+void error(char const *error_msg)
 {
-    fprintf(stderr, error_msg);
+    fprintf(stderr, "%s", error_msg);
 }
 
-bool switch_state(Gamestate *g)
+void switch_state()
 {
-    g->quit();
-    delete g;
+    gamestate->quit();
+    delete gamestate;
     switch (new_state)
     {
     case GAME:
-        {
-        g = new Gamestate_GAME;
-        //g = new Gamestate_GAME();
+        gamestate = new Gamestate_GAME;
         break;
-        }
     default:
         error("New gamestate unknown");
     }
-    g->init();
+    gamestate->init();
 
     change_state = false;
-    //new_state = NULL;
+}
+
+bool init()
+{
+    
+    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
+    {
+        return false;
+    }
+
+    Surf_Display = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+    if(Surf_Display == NULL)
+    {
+        return false;
+    }
+    
+    return true;
+}
+
+bool make_resources()
+{
+    return true;
 }
 
 int main(int argc, char** argv)
 {
-    Gamestate *g = new Gamestate_GAME();
-    
     if (!init())
     {
         error("Failed to init...");
@@ -50,17 +75,16 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    //Superclass object = new Class
-    //Gamestate *g = new Gamestate_GAME;
+    gamestate = new Gamestate_GAME;
     
     bool done = false;
     while (!done)
     {
-        g->events();
-        g->draw();
+        gamestate->events();
+        gamestate->draw();
         if (change_state)
         {
-            switch_state(g);
+            switch_state();
         }
     }
     return EXIT_SUCCESS;
