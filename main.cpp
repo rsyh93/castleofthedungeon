@@ -6,8 +6,8 @@
 #endif
 
 #include "gamestate.hpp"
-#include "gamestate_game.hpp"
 #include "globals.hpp"
+#include "game/gamestate_game.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 

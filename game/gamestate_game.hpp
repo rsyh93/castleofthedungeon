@@ -1,7 +1,7 @@
 #ifndef GAMESTATE_GAME_HPP
 #define GAMESTATE_GAME_HPP
 
-#include "gamestate.hpp"
+#include "../gamestate.hpp"
 
 class Gamestate_GAME : public Gamestate
 {
