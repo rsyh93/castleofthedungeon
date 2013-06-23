@@ -3,8 +3,8 @@
 
 class Actor {
 public:
-    Actor (arguments);
-    virtual ~Actor ();
+    Actor ();
+    ~Actor ();
 
 private:
     /* data */

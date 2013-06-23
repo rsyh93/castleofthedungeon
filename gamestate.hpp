@@ -1,16 +1,32 @@
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
 
-class Gamestate {
+#include <SDL/SDL.h>
+
+class Gamestate
+{
 public:
     Gamestate();
-    virtual ~Gamestate();
-    virtual void init() = 0;
-    virtual void events() = 0;
-    virtual void draw() = 0;
-    virtual void quit() = 0;
+    virtual ~Gamestate() {}
+    void init();
+    void events();
+    void draw();
+    void quit();
 
 private:
+};
+
+class Gamestate_GAME : public Gamestate
+{
+public:
+    Gamestate_GAME() : Gamestate() {}
+    
+    virtual ~Gamestate_GAME() {}
+
+    void init();
+    void events();
+    void draw();
+    void quit();
 };
 
 #endif /* end of include guard: GAMESTATE_HPP */

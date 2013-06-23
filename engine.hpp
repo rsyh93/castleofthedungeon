@@ -4,7 +4,7 @@
 class Engine {
 public:
     Engine ();
-    virtual ~Engine ();
+    ~Engine ();
 
 private:
     /* data */
