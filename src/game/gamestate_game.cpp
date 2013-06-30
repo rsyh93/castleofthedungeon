@@ -14,7 +14,10 @@ void Gamestate_GAME::events()
     Uint8 *keyboard_state = SDL_GetKeyState(NULL);
 
     if (keyboard_state[SDLK_q] || keyboard_state[SDLK_ESCAPE])
+    {
+        extern bool quit;
         quit = true;
+    }
 }
 
 void Gamestate_GAME::draw() 

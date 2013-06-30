@@ -9,8 +9,6 @@ public:
     virtual void events() = 0;
     virtual void draw() = 0;
     virtual void quit() = 0;
-
-private:
 };
 
 
