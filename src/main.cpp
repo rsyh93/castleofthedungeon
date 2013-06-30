@@ -1,9 +1,9 @@
-#ifdef __APPLE__
+//#ifdef __APPLE__
 // something else
-#else
+//#else
 #include <SDL/SDL.h>
 #include <GL/glew.h>
-#endif
+//#endif
 
 #include "gamestate.hpp"
 #include "globals.hpp"
@@ -14,6 +14,7 @@
 bool change_state;
 Statename new_state;
 Gamestate *gamestate;
+bool quit = false;
 
 SDL_Surface *Surf_Display;
 
@@ -41,7 +42,6 @@ void switch_state()
 
 bool init()
 {
-    
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
         return false;
@@ -77,8 +77,7 @@ int main(int argc, char** argv)
 
     gamestate = new Gamestate_GAME;
     
-    bool done = false;
-    while (!done)
+    while (!quit)
     {
         gamestate->events();
         gamestate->draw();
@@ -87,7 +86,8 @@ int main(int argc, char** argv)
             switch_state();
         }
     }
+
+    gamestate->quit();
+    delete gamestate;
     return EXIT_SUCCESS;
 }
-
-//hopefully this works

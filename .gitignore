@@ -1,6 +1,7 @@
 # Make git ignore compiled binaries
 castleinthedungeon
 *.o
+build/*
 
 # Make git ignore backup files
 *~

@@ -8,7 +8,7 @@ all: castleinthedungeon
 castleinthedungeon: main.cpp $(OBJS)
 	$(CC) $(CFLAGS) -o castleinthedungeon main.cpp $(OBJS) $(LIBS)
 
-.c.o: 
+%.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
