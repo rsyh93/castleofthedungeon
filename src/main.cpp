@@ -42,10 +42,6 @@ void switch_state()
 
 bool init()
 {
-<<<<<<< HEAD:src/main.cpp
-
-=======
->>>>>>> a772f57beab40f7f9be055ddfb8aac9511a935fe:src/main.cpp
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
         return false;
