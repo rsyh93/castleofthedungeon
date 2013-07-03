@@ -6,6 +6,8 @@ public:
     Actor ();
     virtual ~Actor ();
 
+    virtual void move();
+
 private:
     /* data */
 };

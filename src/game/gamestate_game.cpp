@@ -18,6 +18,25 @@ void Gamestate_GAME::events()
         extern bool quit;
         quit = true;
     }
+    if (keyboard_state[SDLK_LEFT] != keyboard_state[SDLK_RIGHT])
+    {
+        if (keyboard_state[SDLK_LEFT])
+        {
+        }
+        else
+        {
+        }
+    }
+    if (keyboard_state[SDLK_UP] != keyboard_state[SDLK_DOWN])
+    {
+        if (keyboard_state[SDLK_UP])
+        {
+        }
+        else
+        {
+        }
+    }
+
 }
 
 void Gamestate_GAME::draw() 
