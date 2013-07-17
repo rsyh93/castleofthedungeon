@@ -3,13 +3,14 @@
 
 class Actor {
 public:
-    Actor ();
-    virtual ~Actor ();
+    Actor();
+    virtual ~Actor();
 
     virtual void move();
 
 private:
-    /* data */
+    int x, y;
+    unsigned facing;
 };
 
 #endif /* end of include guard: ACTOR_HPP */

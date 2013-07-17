@@ -1,12 +1,15 @@
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
 
+#include <SDL/SDL.h>
 #include "gamestate.hpp"
 
 enum Statename
 {
     GAME
 };
+
+extern SDL_Surface *Surf_Display;
 
 extern bool change_state;
 extern Statename new_state;
