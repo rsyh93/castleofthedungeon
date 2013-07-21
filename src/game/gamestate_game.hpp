@@ -16,6 +16,15 @@ public:
     virtual void events();
     virtual void draw();
     virtual void quit();
+    
+private:
+    SDL_Surface *bg = NULL;
+    SDL_Surface *charSprite;
+    
+    SDL_Rect charRect;
+    
+    Player *hero; //player variable for interaction with player class variables
+    
 };
 
 #endif /* end of include guard: GAMESTATE_GAME_HPP */

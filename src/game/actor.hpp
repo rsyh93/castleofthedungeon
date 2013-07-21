@@ -12,11 +12,16 @@ public:
 
     int getPositionX(); //for collision detection with our Actors
     int getPositionY();
+    int getSpeed();
+    
+    void setPositionX(int nX);
+    void setPositionY(int nY);
     
 private:
     /* data */
-    int x; //where they are
-    int y;
+    int x = 50; //where they are
+    int y = 50;
+    int speed = 2;
 };
 
 #endif /* end of include guard: ACTOR_HPP */

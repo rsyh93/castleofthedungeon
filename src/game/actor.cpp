@@ -24,3 +24,18 @@ int Actor::getPositionY()
 {
     return y;
 }
+
+int Actor::getSpeed()
+{
+    return speed;
+}
+
+void Actor::setPositionX(int nX)
+{
+    x += nX;
+}
+
+void Actor::setPositionY(int nY)
+{
+    y += nY;
+}

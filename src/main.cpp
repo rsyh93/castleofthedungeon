@@ -1,12 +1,8 @@
-//#ifdef __APPLE__
-// something else
-//#else
-#include <SDL/SDL.h>
-#include <GL/glew.h>
-//#endif
 
-#include "gamestate.hpp"
-#include "globals.hpp"
+//#include <SDL/SDL.h>
+
+//#include "gamestate.hpp"
+//#include "globals.hpp"
 #include "game/gamestate_game.hpp"
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +23,7 @@ void switch_state()
 {
     gamestate->quit();
     delete gamestate;
+    gamestate = NULL;
     switch (new_state)
     {
     case GAME:
@@ -77,6 +74,8 @@ int main(int argc, char** argv)
 
     gamestate = new Gamestate_GAME;
     
+    gamestate->init();
+    
     while (!quit)
     {
         gamestate->events();
@@ -89,5 +88,7 @@ int main(int argc, char** argv)
 
     gamestate->quit();
     delete gamestate;
+    gamestate = NULL;
+    
     return EXIT_SUCCESS;
 }

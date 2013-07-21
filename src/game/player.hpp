@@ -6,8 +6,8 @@
 class Player : public Actor
 {
 public:
-    Player ();
-    virtual ~Player ();
+    Player();
+    virtual ~Player();
     
     int getHP();
     int getMP();
